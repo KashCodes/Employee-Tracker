@@ -11,7 +11,7 @@ VALUES
   ('Octavia', 'Butler', 1),
   ('Unica', 'Zurn', 1);
 
-INSERT INTO employee_role (role_title, role_salary, )
+INSERT INTO role (role_title, role_salary, )
 VALUES
   ('Ronald', 'Firbank', 1),
   ('Virginia', 'Woolf', 1),

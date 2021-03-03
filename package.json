@@ -4,7 +4,10 @@
   "description": "Employee Tracker",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "migrate": "mysql db/tracker.db < db/schema.sql",
+    "seed": "mysql db/tracker.db < db/seeds.sql",
+    "db": "mysql db/tracker.db"
   },
   "repository": {
     "type": "git",
