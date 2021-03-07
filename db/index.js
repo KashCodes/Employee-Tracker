@@ -1,50 +1,10 @@
 const connection = require('./connection')
 const mysql = require('mysql2');
-const { prompt } = require('inquirer');
+const inquirer = require('inquirer');
 const cTable = require("console.table");
 const confirm = require('inquirer-confirm');
+const server = require('../server');
 
-// class DB {
-//   constructor (connection) {
-//     this.connection=connection;
-//   }
-
-//   showEmployeeSummary() {
-//     return this.connection.promise().query('SELECT employee.id, employee.first_name, employee.last_name, role.title, department_name AS Department, role.salary, concat(manager.first_name, " ", manager.last_name) AS manager FROM employee LEFT JOIN employee manager ON  employee.manager_id = manager.id LEFT JOIN role ON employee.role_id = role.id LEFt JOIN department ON role.department_id = department.id;'
-//     // (err, res) => {
-//     //   if (err) throw err;
-//     //   console.table(res);
-//     // }
-//     )}
-
-  
-// };
-
-
-// from function 
-// function promptUser(){
-//   return prompt([
-//     {
-//       type: "list",
-//       name: "license",
-//       message: "Choose the license used for your project: ",
-//       choices: [
-//         "Apache",
-//         "Academic",
-//         "GNU",
-//         "ISC",
-//         "MIT",
-//         "Mozilla",
-//         "Open"
-//       ]
-//     }
-//   ]);
-// }
-
-
-var showroles;
-var showdepartments;
-var showemployees;
 
 // Initiate MySQL Connection.
 connection.connect(function (err) {
