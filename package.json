@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "migrate": "mysql db/tracker.db < db/schema.sql",
-    "seed": "mysql db/tracker.db < db/seeds.sql",
-    "db": "mysql db/tracker.db"
+    "migrate": "mysql db/employee.db < db/schema.sql;",
+    "seed": "mysql db/employee.db < db/seeds.sql;",
+    "db": "mysql db/employee.db;"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^8.0.0",
+    "inquirer-confirm": "^2.0.7",
     "mysql2": "^2.2.5"
-    
   }
 }

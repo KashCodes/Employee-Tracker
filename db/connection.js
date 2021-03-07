@@ -1,7 +1,8 @@
 // connect to mysql here 
 const mysql = require("mysql2");
+const cTable = require("console.table");
 
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: process.env.host,
   port: process.env.port,
   user: process.env.username,
@@ -9,7 +10,11 @@ var connection = mysql.createConnection({
   database: process.env.database
 });
 console.log('Connected');
-connection.connect();
+connection.connect(function (err) {
+  if (err) {
+    throw err;
+  }
+});
 
-module.exports connection;
+module.exports = connection;
 
