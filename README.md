@@ -17,7 +17,7 @@
   </p>
   
   ## Description
-  ❓ A Node.js command-line application that takes in and displays information about employees. It allows you to provide them an employee ID, Department, Role, and Salary. Then display's them in a clean table int he command-line.
+  ❓ A Node.js command-line application that takes in and displays information about employees. It allows you to track and provide them an employee ID, Department, Role, and Salary. Then display's them in a clean table in the command-line.
 
   ### Link to Walkthrough Video:
   > - [:movie_camera: Click Here for an external video link.](https://drive.google.com/file/d/1Z7pRX48OOCl4rLAsdxGaXBOqXjVnroVZ/view)
