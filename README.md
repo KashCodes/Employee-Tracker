@@ -49,6 +49,9 @@
   <br />Fill DB w/ Starter Data: `source seeds.sql;`
   <br />Close MySQL2: `quit;`
 
+  **Run Application:**
+  `node index.js` - Then follow the command-line prompts. 
+
   ## GitHub Repository Link: 
   > https://github.com/KashCodes/Employee-Tracker
 
