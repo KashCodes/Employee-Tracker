@@ -29,19 +29,4 @@ VALUES
   ('Tom', 'Allen', 7, null),
   ('Tammer', 'Galal', 4, 3);  
   
- /* UPDATE employee SET manager_id = 3 WHERE id = 1;
-  UPDATE employee SET manager_id = 1 WHERE id = 2;
-  UPDATE employee SET manager_id = 3 WHERE id = 4;
-  UPDATE employee SET manager_id = 6 WHERE id = 7;
-  UPDATE employee SET manager_id = 4 WHERE id = 8; */
-  
-/*USE employees;
-SELECT employee.id, employee.first_name, employee.last_name, title, department_name Department ,
- salary, concat(manager.first_name, " ", manager.last_name) manager
-FROM employee 
-LEFT JOIN employee manager
-ON  employee.manager_id = manager.id
-LEFT JOIN role 
-ON employee.role_id = role.id
-LEFT JOIN department
-ON role.department_id = department.id;*/
+
