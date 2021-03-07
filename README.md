@@ -20,7 +20,7 @@
   ❓ A Node.js command-line application that takes in and displays information about employees. It allows you to provide them an employee ID, Department, Role, and Salary. Then display's them in a clean table int he command-line.
 
   ### Link to Walkthrough Video:
-  > - [:movie_camera: Click Here for an external video link.](https://drive.google.com/file/d/1Css4udq3OncbN8SV17ETKTN_gyEraXpU/view)
+  > - [:movie_camera: Click Here for an external video link.](https://drive.google.com/file/d/1Z7pRX48OOCl4rLAsdxGaXBOqXjVnroVZ/view)
   > - [:movie_camera: Click Here for the downloaded MP4 video saved locally.](./src/demo-MP4.mp4)
   > - [:movie_camera: Click Here for the downloaded webm video saved locally.](./src/demo-webm.webm)
 
