@@ -43,11 +43,11 @@
   <br /> `npm init i`<br />  
 
   **Setup the Database:**
-  <br />Start MySQL2 w/ Username:`mysql -u bootcamp -p`
-  <br />Password:`bootcamp`
-  <br />Setup DB w/ Tables:`source schema.sql;`
-  <br />Fill DB w/ Starter Data:`source seeds.sql;`
-  <br />Close MySQL2:`quit;`
+  <br />Start MySQL2 w/ Username: `mysql -u bootcamp -p`
+  <br />Password: `bootcamp`
+  <br />Setup DB w/ Tables: `source schema.sql;`
+  <br />Fill DB w/ Starter Data: `source seeds.sql;`
+  <br />Close MySQL2: `quit;`
 
   ## GitHub Repository Link: 
   > https://github.com/KashCodes/Employee-Tracker
