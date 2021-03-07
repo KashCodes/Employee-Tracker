@@ -80,6 +80,7 @@ function showmenu() {
     })
 }
 
+// give menu options
 function menu(option) {
   switch (option) {
     case "viewEmployees":
@@ -105,9 +106,15 @@ function menu(option) {
       break;
     case "quit":
       end();
+      break;
+    default:
+      console.log("You must choose an option.")
+      break;
+
   }
 }
 
+// view all employees function
 function viewAllEmployees() {
   connection.query('SELECT employee.id, employee.first_name, employee.last_name, role.title, department_name AS Department, role.salary, concat(manager.first_name, " ", manager.last_name) AS manager FROM employee LEFT JOIN employee manager ON  employee.manager_id = manager.id LEFT JOIN role ON employee.role_id = role.id LEFt JOIN department ON role.department_id = department.id;', function (error, res) {
     console.table(res);
@@ -115,6 +122,7 @@ function viewAllEmployees() {
   })
 }
 
+// view all depts function
 function viewAllDepartments() {
   console.log("view all departments")
   connection.query("SELECT * from department", function (error, res) {
@@ -123,6 +131,7 @@ function viewAllDepartments() {
   })
 }
 
+// view all roles
 function viewAllRoles() {
   connection.query("SELECT * from role", function (error, res) {
     console.table(res);
@@ -162,6 +171,7 @@ function addEmployee() {
     })
 }
 
+// add employee to db
 function addEmployees(data) {
 
   connection.query("INSERT INTO employee SET ?",
@@ -172,10 +182,15 @@ function addEmployees(data) {
       manager_id: data.manager
     }, function (error, res) {
       if (error) throw error;
+      connection.query("SELECT * from employee", function (error, res) {
+        // console.log(error, res);
+        showemployees = res.map(emp => ({ name: `${emp.first_name} ${emp.last_name}`, value: emp.id }))
+      })
     })
     endOrMenu();
 }
 
+//  ask to add dept name
 function addDept() {
   inquirer
     .prompt([
@@ -191,15 +206,20 @@ function addDept() {
     })
 }
 
+// add dept to db
 function addDepartment(data) {
   connection.query("INSERT INTO department SET ?", { department_name: data.name},
   function (error, res) {
     // console.log(error, res);
     if (error) throw error;
+    connection.query("SELECT * from department", function (error, res) {
+      showdepartments = res.map(dep => ({ name: dep.name, value: dep.id }))
+    })
   });
   endOrMenu();
 }
 
+// ask to add a role and salary
 function addRole() {
   inquirer
     .prompt([
@@ -226,6 +246,7 @@ function addRole() {
     })
 }
 
+// add role and salary to db 
 function addEmployeeRole(data) {
   connection.query("INSERT INTO role SET ?", {
     title: data.title,
@@ -234,10 +255,14 @@ function addEmployeeRole(data) {
   }, function (error, res) {
     // console.log(error, res);
     if (error) throw error;
+    connection.query("SELECT * from role", function (error, res) {
+      showroles = res.map(role => ({ name: role.title, value: role.id }))
+    })
   });
   endOrMenu();
 }
 
+// ask to update the employee roll
 function updateRole() {
   inquirer
     .prompt([
@@ -260,15 +285,20 @@ function updateRole() {
     })
 }
 
+// update role within the db 
 function updateEmployeeRole(data) {
   connection.query(`UPDATE employee SET role_id = ${data.titleID} WHERE id = ${data.empID}`,
   function (error, res) {
     // console.log(error, res);
     if (error) throw error;
+    connection.query("SELECT * from role", function (error, res) {
+      showroles = res.map(role => ({ name: role.title, value: role.id }))
+    })
   });
   endOrMenu();
 }
 
+// would you like to end or go back to start menu??
 function endOrMenu() {
   confirm("Would you like to continue?")
   .then(function confirmed() {
@@ -278,6 +308,7 @@ function endOrMenu() {
   });
 }
 
+// end prompts and close tracker
 function end() {
   console.log("Thank you for using Employee Tracker!");
   connection.end();
